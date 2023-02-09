@@ -1,24 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CreateUser from "./pages/admin/create-user";
+import UserDetails from "./pages/admin/user-details";
+import DashBoard from "./pages/admin";
+import Login from "./pages/login";
+import UserDashBoard from "./pages/user";
+import ProtectedRoute from "./componnets/protected-route";
+import UserProtectedRoute from "./componnets/user-protected-route";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <DashBoard />
+            </ProtectedRoute>
+          }
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Route
+            path="create-user"
+            element={
+              <ProtectedRoute>
+                <CreateUser />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="edit-user/:id"
+            element={
+              <ProtectedRoute>
+                <CreateUser />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="user-details"
+            element={
+              <ProtectedRoute>
+                <UserDetails />
+              </ProtectedRoute>
+            }
+          />
+        </Route>
+        <Route
+          path="/user"
+          element={
+            <UserProtectedRoute>
+              <UserDashBoard />
+            </UserProtectedRoute>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

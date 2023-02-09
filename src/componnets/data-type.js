@@ -1,0 +1,46 @@
+export const adminForm = [
+  { id: 1, name: "name", placeholder: "Name", type: "text" },
+  { id: 2, name: "idNo", placeholder: "ID Number", type: "text" },
+  {
+    id: 3,
+    name: "bankAccountNo",
+    placeholder: "Account Number",
+    type: "text",
+  },
+  {
+    id: 4,
+    name: "bankAccountBalance",
+    placeholder: "Account Balance",
+    type: "number",
+    step: ".01",
+  },
+  { id: 5, name: "loginId", placeholder: "Login Id", type: "text" },
+  { id: 6, name: "password", placeholder: "Password", type: "text" },
+  { id: 7, name: "email", placeholder: "Email", type: "email" },
+  { id: 8, name: "type", placeholder: "Account Type", type: "text" },
+  { id: 9, name: "address1", placeholder: "Address1", type: "text" },
+  { id: 10, name: "address2", placeholder: "Address2", type: "text" },
+  { id: 11, name: "city", placeholder: "City", type: "text" },
+  { id: 12, name: "postcode", placeholder: "Postal Code", type: "number" },
+  { id: 13, name: "state", placeholder: "State", type: "text" },
+  { id: 14, name: "country", placeholder: "Country", type: "text" },
+];
+
+export const updateForm = [
+  { id: 1, name: "name", placeholder: "Name", type: "text" },
+  { id: 2, name: "idNo", placeholder: "ID Number", type: "text" },
+  {
+    id: 4,
+    name: "bankAccountBalance",
+    placeholder: "Account Balance",
+    type: "number",
+    step: ".01",
+  },
+  { id: 7, name: "email", placeholder: "Email", type: "email" },
+  { id: 9, name: "address1", placeholder: "Address1", type: "text" },
+  { id: 10, name: "address2", placeholder: "Address2", type: "text" },
+  { id: 11, name: "city", placeholder: "City", type: "text" },
+  { id: 12, name: "postcode", placeholder: "Postal Code", type: "number" },
+  { id: 13, name: "state", placeholder: "State", type: "text" },
+  { id: 14, name: "country", placeholder: "Country", type: "text" },
+];

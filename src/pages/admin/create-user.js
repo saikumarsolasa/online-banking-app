@@ -31,7 +31,15 @@ const CreateUser = () => {
       ...accNumber,
     };
 
-    if (Object.values(updatedObj).every((input, index) => input !== "")) {
+    const validate = () =>
+      Object.values(updatedObj).filter(function (item) {
+        if (!item) return false;
+        else return true;
+      });
+
+    console.log(validate());
+
+    if (validate().length === 14) {
       const res = await fetch(
         "https://web-assessment.apps.ocp.tmrnd.com.my/api/user",
         {
@@ -46,7 +54,7 @@ const CreateUser = () => {
       const parseRes = await res.json();
       if (parseRes) {
         window.alert("User details registered Successfully");
-        navigate("/dashboard");
+        navigate("/dashboard/user-details");
       }
     } else {
       alert("Please fill all input fields");
@@ -55,7 +63,6 @@ const CreateUser = () => {
 
   const updateFormHandler = async (e) => {
     e.preventDefault();
-    console.log(userDetails);
     const res = await fetch(
       `https://web-assessment.apps.ocp.tmrnd.com.my/api/user/${location?.state?.obj?.id}`,
       {
@@ -92,6 +99,7 @@ const CreateUser = () => {
                           placeholder={placeholder}
                           name={name}
                           key={index}
+                          values={userDetails}
                           handler={handler}
                           {...rest}
                         />

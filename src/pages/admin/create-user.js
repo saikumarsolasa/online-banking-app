@@ -37,8 +37,6 @@ const CreateUser = () => {
         else return true;
       });
 
-    console.log(validate());
-
     if (validate().length === 14) {
       const res = await fetch(
         "https://web-assessment.apps.ocp.tmrnd.com.my/api/user",
